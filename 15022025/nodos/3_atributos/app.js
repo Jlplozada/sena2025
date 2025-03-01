@@ -7,12 +7,19 @@ const documento=document.querySelector(`#documento`);
 const usuario=document.querySelector(`#usuario`);
 const contrasena=document.querySelector(`#contrasena`);
 const btn = document.querySelector(`button`);
+const $selector = document.createElement("select");
 const ciudades=async()=>{
     const data =await fetch(`data.json`);
     const ciudades=await data.json();
-    console.log(data); 
+
+    ciudades.forEach((Element)=>{
+        console.log();
+        
+    })
 }
 
+
+ 
 const validar = (event)=>{
     // detenemos evento
     event.preventDefault();
