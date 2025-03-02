@@ -6,15 +6,16 @@ const telefono = document.querySelector(`#telefono`);
 const documento = document.querySelector(`#documento`);
 const usuario = document.querySelector(`#usuario`);
 const contrasena = document.querySelector(`#contrasena`);
+const $selector = document.createElement("select");
 const btn = document.querySelector(`button`);
 const terminos = document.createElement(`input`);
 terminos.setAttribute("type", "checkbox");
-const css = document.createElement(`input`);
-css.setAttribute("type", "checkbox");
 
 if (!terminos.checked) {
     btn.setAttribute("disabled", "");
 }
+formulario.insertAdjacentElement("beforeEnd", terminos);
+formulario.insertAdjacentElement("beforeEnd", btn);
 
 const ciudades = async () => {
     const data = await fetch(`data.json`);
@@ -37,30 +38,14 @@ const ciudades = async () => {
     combo.append(opciones);
     formulario.insertAdjacentElement("afterbegin", combo);
 };
-ciudades();
+const genero=async()=>{
+    const generos =await fetch(`generos.json`);
+    const tipo =await generos.json();
+    console.log(tipo);
+    
+}
+genero();
 
-const generos = async () => {
-    const response = await fetch(`generos.json`);
-    const generos = await response.json();
-    const combo = document.createElement(`select`);
-    combo.classList.add("formulario_input");
-    combo.name = "genero_id";
-    combo.id = "genero_id";
-    const defecto = document.createElement(`option`);
-    defecto.textContent = "seleccione genero...";
-    combo.append(defecto);
-    const opciones = document.createDocumentFragment();
-    generos.forEach(({ tipo, id }) => {
-        const option = document.createElement(`option`);
-        option.textContent = tipo;
-        option.value = id;
-        const clone = document.importNode(option, true);
-        opciones.append(clone);
-    });
-    combo.append(opciones);
-    formulario.insertAdjacentElement("beforeEnd", combo);
-};
-generos();
 const validar = (event) => {
     event.preventDefault();
     if (nombre.value == ``) {
@@ -86,16 +71,17 @@ const keydown = (event) => {
 nombre.addEventListener(`keydown`, keydown);
 
 const validarTerminos = () => {
+    // 1
     if (terminos.checked) {
         btn.removeAttribute("disabled");
     } else {
         btn.setAttribute("disabled", "");
     }
+    // 2
+    // btn.disabled=!terminos.checked;
+    // 3
+    // (terminos.checked)?btn.removeAttribute("disable"):btn.setAttribute("disable","");
 };
 
+ciudades();
 terminos.addEventListener("change", validarTerminos);
-
-formulario.insertAdjacentElement("beforeEnd", usuario);
-formulario.insertAdjacentElement("beforeEnd", contrasena);
-formulario.insertAdjacentElement("beforeEnd", terminos);
-formulario.insertAdjacentElement("beforeEnd", btn);

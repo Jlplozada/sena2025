@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "nombre":"Bucaramanga"
+    },
+    {
+        "id":2,
+        "nombre":"Giedecuesta"
+    },
+    {
+        "id":3,
+        "nombre":"Giron"
+    },
+    {
+        "id":4,
+        "nombre":"Floridablanca"
+    }
+]
