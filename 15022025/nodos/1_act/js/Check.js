@@ -1,5 +1,5 @@
 const btn = document.querySelector(`button`);
-export const terminos = () => {
+export const terminos =async () => {
     const termino = document.createElement(`input`);
     termino.setAttribute("type", "checkbox");
     if (!termino.checked) {
@@ -15,3 +15,4 @@ export const terminos = () => {
     termino.addEventListener('change', validarTerminos);
     document.body.appendChild(termino);
 };
+export const genero=async ()

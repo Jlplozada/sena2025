@@ -1,20 +1,23 @@
+import { formulario, nombre, apellido, telefono, documento, usuario, contrasena, email, terminos, validarFormulario } from './validar.js';
+
 const body = document.body;
-const formulario = document.querySelector(`#formulario`);
-const nombre = document.getElementById(`nombre`);
-const apellido = document.querySelector(`#apellido`);
-const telefono = document.querySelector(`#telefono`);
-const documento = document.querySelector(`#documento`);
-const usuario = document.querySelector(`#usuario`);
-const contrasena = document.querySelector(`#contrasena`);
 const btn = document.querySelector(`button`);
-const terminos = document.createElement(`input`);
-terminos.setAttribute("type", "checkbox");
 const css = document.createElement(`input`);
 css.setAttribute("type", "checkbox");
 
 if (!terminos.checked) {
-    btn.setAttribute("disabled", "");
+    btn.setAttribute("disabled","");
 }
+
+email.addEventListener("input", function (event) {
+    if (email.validity.typeMismatch) {
+      email.setCustomValidity(
+        alert("no es correo")
+    );
+    } else {
+      email.setCustomValidity("");
+    }
+  });
 
 const ciudades = async () => {
     const data = await fetch(`data.json`);
@@ -40,8 +43,8 @@ const ciudades = async () => {
 ciudades();
 
 const generos = async () => {
-    const response = await fetch(`generos.json`);
-    const generos = await response.json();
+    const gen = await fetch(`generos.json`);
+    const generos = await gen.json();
     const combo = document.createElement(`select`);
     combo.classList.add("formulario_input");
     combo.name = "genero_id";
@@ -59,15 +62,16 @@ const generos = async () => {
     });
     combo.append(opciones);
     formulario.insertAdjacentElement("beforeEnd", combo);
+    return combo;
 };
-generos();
+const generoCombo = await generos();
+
 const validar = (event) => {
     event.preventDefault();
     if (nombre.value == ``) {
         alert(`el nombre es obligatorio`);
         nombre.focus();
     } else {
-        // Add further validation or actions here if needed
     }
 };
 
@@ -95,6 +99,44 @@ const validarTerminos = () => {
 
 terminos.addEventListener("change", validarTerminos);
 
+const checkboxJava = document.createElement("input");
+checkboxJava.type = "checkbox";
+checkboxJava.name = "lenguajes";
+checkboxJava.value = "Java";
+const labelJava = document.createElement("label");
+labelJava.append(checkboxJava, "Java");
+
+const checkboxPython = document.createElement("input");
+checkboxPython.type = "checkbox";
+checkboxPython.name = "lenguajes";
+checkboxPython.value = "Python";
+const labelPython = document.createElement("label");
+labelPython.append(checkboxPython, "Python");
+
+const checkboxCSharp = document.createElement("input");
+checkboxCSharp.type = "checkbox";
+checkboxCSharp.name = "lenguajes";
+checkboxCSharp.value = "C#";
+const labelCSharp = document.createElement("label");
+labelCSharp.append(checkboxCSharp, "C#");
+
+const checkboxJavaScript = document.createElement("input");
+checkboxJavaScript.type = "checkbox";
+checkboxJavaScript.name = "lenguajes";
+checkboxJavaScript.value = "JavaScript";
+const labelJavaScript = document.createElement("label");
+labelJavaScript.append(checkboxJavaScript, "JavaScript");
+
+formulario.insertAdjacentElement("beforeEnd", labelJava);
+formulario.insertAdjacentElement("beforeEnd", document.createElement("br"));
+formulario.insertAdjacentElement("beforeEnd", labelPython);
+formulario.insertAdjacentElement("beforeEnd", document.createElement("br"));
+formulario.insertAdjacentElement("beforeEnd", labelCSharp);
+formulario.insertAdjacentElement("beforeEnd", document.createElement("br"));
+formulario.insertAdjacentElement("beforeEnd", labelJavaScript);
+formulario.insertAdjacentElement("beforeEnd", document.createElement("br"));
+
+formulario.insertAdjacentElement("beforeEnd", generoCombo);
 formulario.insertAdjacentElement("beforeEnd", usuario);
 formulario.insertAdjacentElement("beforeEnd", contrasena);
 formulario.insertAdjacentElement("beforeEnd", terminos);

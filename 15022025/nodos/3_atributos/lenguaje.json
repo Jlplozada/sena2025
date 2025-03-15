@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "nombre":"Javascript"
+    },
+    {
+        "id":2,
+        "nombre":"Python"
+    },
+    {
+        "id":3,
+        "nombre":"Java"
+    },
+    {
+        "id":4,
+        "nombre":"C#"
+    }
+]
