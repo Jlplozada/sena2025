@@ -1,0 +1,33 @@
+{
+    
+  "ciudades":[
+    {
+      "id":1,
+      "nombre":"Bogota"
+    },{
+      "id":2,
+      "nombre":"Bucaramanga"
+    },{
+      "id":3,
+      "nombre":"Barranquilla"
+    },{
+      "id":4,
+      "nombre":"Medellin"
+    }
+  ],
+  "documento":[
+    {
+      "id": 1,
+      "tipo": "Pasaporte"
+    },
+    {
+      "id": 2,
+      "tipo": "Cédula de Ciudadanía"
+    },
+    {
+      "id": 3,
+      "tipo": "Licencia de Conducir"
+    }
+  ],
+  "usuarios":[]
+}
