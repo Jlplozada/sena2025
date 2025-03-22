@@ -1,33 +1,77 @@
 {
-    
-  "ciudades":[
+  "ciudades": [
     {
-      "id":1,
-      "nombre":"Bogota"
-    },{
-      "id":2,
-      "nombre":"Bucaramanga"
-    },{
-      "id":3,
-      "nombre":"Barranquilla"
-    },{
-      "id":4,
-      "nombre":"Medellin"
+      "id": "1",
+      "nombre": "Bogota"
+    },
+    {
+      "id": "2",
+      "nombre": "Bucaramanga"
+    },
+    {
+      "id": "3",
+      "nombre": "Barranquilla"
+    },
+    {
+      "id": "4",
+      "nombre": "Medellin"
     }
   ],
-  "documento":[
+  "documento": [
     {
-      "id": 1,
+      "id": "1",
       "tipo": "Pasaporte"
     },
     {
-      "id": 2,
+      "id": "2",
       "tipo": "Cédula de Ciudadanía"
     },
     {
-      "id": 3,
+      "id": "3",
       "tipo": "Licencia de Conducir"
     }
   ],
-  "usuarios":[]
+  "usuarios": [
+    {
+      "id": "660c",
+      "nombre": "",
+      "apellido": "",
+      "ciudad": 0,
+      "telefono": "",
+      "direccion": "",
+      "tipo_documento": "seleccione ....",
+      "email": ""
+    },
+    {
+      "id": "e604",
+      "nombre": "Jose Luis",
+      "apellido": "Paez Lozada",
+      "ciudad": 2,
+      "telefono": "3175183501",
+      "direccion": "calle 68#16-12",
+      "tipo_documento": "seleccione ....",
+      "email": ""
+    },
+    {
+      "id": "7d3b",
+      "nombre": "",
+      "apellido": "",
+      "ciudad": 0,
+      "telefono": "",
+      "direccion": "",
+      "tipo_documento": "seleccione ....",
+      "email": ""
+    },
+    {
+      "id": "ef54",
+      "nombre": "",
+      "apellido": "",
+      "ciudad": 0,
+      "telefono": "",
+      "direccion": "",
+      "tipo_documento": 0,
+      "documento": "",
+      "email": ""
+    }
+  ]
 }
